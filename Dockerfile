@@ -1,4 +1,4 @@
-FROM python:3.7-buster
+FROM python:3.8.4-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
 
@@ -15,6 +15,9 @@ COPY requirements.txt .
 
 # install dependencies
 RUN pip install -r requirements.txt
+
+
+COPY . .
 
 # Starting Worker
 CMD ["python3","-m","chatbot"]
