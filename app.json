@@ -9,6 +9,7 @@
     ],
     "success_url": "https://github.com/pokurt/Chat-Bot-ENG",
     "repository": "https://github.com/pokurt/Chat-Bot-ENG",
+    "stack": "container",
     "env": {
         "API_ID": {
             "description": "Get this value from https://my.telegram.org",
