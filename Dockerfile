@@ -29,5 +29,7 @@ COPY . .
 
 ENV ENV true
 
+RUN sudo python3 -m spacy download en
+
 # Starting Worker
 CMD ["python3","-m","chatbot"]
