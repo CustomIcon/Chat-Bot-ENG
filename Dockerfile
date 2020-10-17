@@ -9,6 +9,7 @@ WORKDIR /app/
 RUN apt update && apt upgrade -y && \
     apt install --no-install-recommends -y \
     python3 \
+    sudo \
     python3-dev \
     python3-pip \
     python3-requests \
