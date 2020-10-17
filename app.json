@@ -1,0 +1,32 @@
+{
+    "name": "Honolulu Bot",
+    "description": "https://github.com/pokurt/Chat-Bot-ENG",
+    "keywords": [
+        "Telegram",
+        "Pyrogram",
+        "Chatbot",
+        "AI"
+    ],
+    "success_url": "https://github.com/pokurt/Chat-Bot-ENG",
+    "repository": "https://github.com/pokurt/Chat-Bot-ENG",
+    "env": {
+        "API_ID": {
+            "description": "Get this value from https://my.telegram.org",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Get this value from https://my.telegram.org",
+            "required": true
+        },
+        "TOKEN": {
+            "description": "Bot Token you got from @BotFather",
+            "required": true
+        }
+    },
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
