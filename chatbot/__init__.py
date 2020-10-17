@@ -15,10 +15,6 @@ LOGS = logging.getLogger(__name__)
 
 name = "chatbot"
 
-BotUsername = ""
-BotID = 0
-BotName = ""
-
 # Read from config file
 config_file = f"{name}.ini"
 config = ConfigParser()
@@ -34,10 +30,3 @@ client = None
 START_TIME = datetime.now()
 
 chatbot = chatbot(name)
-
-async def get_bot():
-    global BotID, BotName, BotUsername
-    getbot = await chatbot.get_me()
-    BotID = getbot.id
-    BotName = getbot.first_name
-    BotUsername = getbot.username

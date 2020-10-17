@@ -125,3 +125,4 @@ dmypy.json
 .pyre/
 *.session
 chatbot.ini
+*.sqlite3
