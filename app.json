@@ -22,11 +22,5 @@
             "description": "Bot Token you got from @BotFather",
             "required": true
         }
-    },
-    "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "free"
-        }
     }
 }
