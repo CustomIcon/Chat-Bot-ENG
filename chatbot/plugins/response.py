@@ -3,7 +3,7 @@ import aiohttp
 async def get_response(query):
     async with aiohttp.ClientSession() as ses:
         async with ses.post(
-            f'https://some-random-api.ml/chatbot?message='{query}'
+            f'https://some-random-api.ml/chatbot?message={query}'
         ) as resp:
-            bot_reply = response.json['response']
-    print('Chatbot:',bot_reply)
+            answer = await resp.json()
+            return answer['response']['bot']
