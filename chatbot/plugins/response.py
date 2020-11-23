@@ -6,4 +6,4 @@ async def get_response(query):
             f'https://some-random-api.ml/chatbot?message={query}'
         ) as resp:
             answer = await resp.json(content_type='text/html')
-            return answer['response']['null']
+            return answer['response']['response']
