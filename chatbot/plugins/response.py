@@ -5,5 +5,5 @@ async def get_response(query):
         async with ses.post(
             f'https://some-random-api.ml/chatbot?message={query}'
         ) as resp:
-            answer = await resp.html()
+            answer = await resp.json()
             return answer['response'][null]
