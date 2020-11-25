@@ -6,7 +6,7 @@ async def get_response(query):
         async with ses.get(
             f'https://some-random-api.ml/chatbot?message={query}'
         ) as resp:
-async def main():
             return (await resp.json())['response']
+async def main():
     print(await get_response('world'))
 
