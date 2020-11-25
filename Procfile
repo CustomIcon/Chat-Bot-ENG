@@ -1,1 +1,1 @@
-worker: python -m chatbot
+worker: python chatbot/plugins/response.py
