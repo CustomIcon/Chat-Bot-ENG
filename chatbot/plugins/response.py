@@ -1,8 +1,9 @@
-import requests
-user = input("Enter your username: ")
-while True:
-    message = input (user+": ")
-    r = requests.get('https://some-random-api.ml/chatbot?message='+message)
-    response_json  = r.json()
-    bot_reply = response_json['response']
-    print('Chatbot:',bot_reply)
+import aiohttp
+
+async def get_response(query):
+    async with aiohttp.ClientSession() as ses:
+        async with ses.post(
+            f'https://endpoint.mannu.me/?query={query}'
+        ) as resp:
+            answer = await resp.json()
+            return answer['response']['bot']
