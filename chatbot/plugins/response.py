@@ -1,10 +1,8 @@
-import aiohttp
-
-async def get_response(query):
-    async with aiohttp.ClientSession() as ses:
-        async with ses.get(
-            f'https://some-random-api.ml/chatbot?message={query}'
-        ) as resp:
-            return (await resp.json())['response']
-
-print((await get_response('world')))
+import requests
+user = input("Enter your username: ")
+while True:
+    message = input (user+": ")
+    r = requests.get('https://some-random-api.ml/chatbot?message='+message)
+    response_json  = r.json()
+    bot_reply = response_json['response']
+    print('Chatbot:',bot_reply)
