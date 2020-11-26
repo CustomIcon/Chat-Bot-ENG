@@ -1,3 +1,5 @@
+import aiohttp
+import asyncio
 async def get_response(query):
     async with aiohttp.ClientSession() as ses:
         async with ses.get(
