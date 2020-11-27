@@ -1,4 +1,3 @@
-ere is how to fix it:
 
 import aiohttp
 import asyncio
