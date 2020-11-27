@@ -4,3 +4,4 @@ aiohttp
 asyncio
 multithreading
 loguru
+requests
