@@ -2,3 +2,4 @@ pyrogram
 tgcrypto
 aiohttp
 asyncio
+thread
