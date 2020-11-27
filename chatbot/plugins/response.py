@@ -1,3 +1,5 @@
+
+
 import aiohttp
 import asyncio
 
@@ -11,7 +13,8 @@ async def get_response(query):
     
 #using an event loop
 loop = asyncio.get_event_loop()
-Task = asyncio.gather(*[get_response('response') for _ in range(500)])
+Task = asyncio.gather(*[get_response('response') for _ in range(800)])
+
 try:
     loop.run_until_complete(Task)
 finally:
