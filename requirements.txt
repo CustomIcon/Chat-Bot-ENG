@@ -2,4 +2,4 @@ pyrogram
 tgcrypto
 aiohttp
 asyncio
-thread
+multithreading
