@@ -9,14 +9,14 @@ async def get_response(query):
             f'https://some-random-api.ml/chatbot?message={query}'
         ) as resp:
             return (await resp.json()),['response']
-#using an event loop
-loop = asyncio.get_event_loop()
-group1 = asyncio.gather(*[get_response("group 1.{}".format(i)) for i in range(1, 6)])
-group2 = asyncio.gather(*[get_response("group 2.{}".format(i)) for i in range(1, 4)])
-group3 = asyncio.gather(*[get_response("group 3.{}".format(i)) for i in range(1, 10)])
-loop.close()
-all_groups = asyncio.gather(group1, group2, group3)
-results = loop.run_until_complete(all_groups)
 
+async def Main(query):
+    
+    #using an event loop
+    loop = asyncio.get_event_loop()
+    Task = asyncio.gather(*[get_response for _ in range(500)])
 
-print(results)
+    try:
+        loop.run_until_complete(Task)
+    finally:
+        loop.close()
