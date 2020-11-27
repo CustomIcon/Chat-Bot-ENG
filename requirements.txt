@@ -3,3 +3,4 @@ tgcrypto
 aiohttp
 asyncio
 multithreading
+loguru
