@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-import thread
+from multithreading import thread
 
 async def get_response(query):
     async with aiohttp.ClientSession() as ses:
