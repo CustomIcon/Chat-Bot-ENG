@@ -1,3 +1,4 @@
+ere is how to fix it:
 
 import aiohttp
 import asyncio
@@ -9,14 +10,13 @@ async def get_response(query):
             f'https://some-random-api.ml/chatbot?message={query}'
         ) as resp:
             return (await resp.json()),['response']
-
-async def Main(query):
     
-    #using an event loop
-    loop = asyncio.get_event_loop()
-    Task = asyncio.gather(*[get_response for _ in range(500)])
-
-    try:
-        loop.run_until_complete(Task)
-    finally:
-        loop.close()
+#using an event loop
+loop = asyncio.get_event_loop()
+Task = asyncio.gather(*[get_response('response') for _ in range(500)])
+    else:
+Task = asyncio.gather(*[get_response('error') for _ in range(500)]
+try:
+    loop.run_until_complete(Task)
+finally:
+    loop.close()
