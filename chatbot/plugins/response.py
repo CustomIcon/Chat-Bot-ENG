@@ -15,4 +15,6 @@ Task = asyncio.gather(*[get_response('world') for _ in range(500)])
 
 try:
     loop.run_until_complete(Task)
+finally:
+    loop.close()
 
