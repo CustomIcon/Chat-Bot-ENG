@@ -2,19 +2,22 @@ import aiohttp
 import asyncio
 
 
+_sem = None
+
+
 async def get_response(query):
-    async with aiohttp.ClientSession() as ses:
-        async with ses.get(
-            f'https://some-random-api.ml/chatbot?message={query}'
-        ) as resp:
-            return(await resp.json())['response']
-    
-#using an event loop
-loop = asyncio.get_event_loop()
-Task = asyncio.gather(*[get_response('world') for _ in range(500)])
+    async with _sem:
+        async with aiohttp.ClientSession() as ses:
+            async with ses.get(f'https://some-random-api.ml/chatbot?message={query}') as resp:
+                return (await resp.json())['response']
 
-try:
-    loop.run_until_complete(Task)
-finally:
-    loop.close()
 
+async def main():
+    global _sem
+    _sem = asyncio.Semaphore(10)  # read https://stackoverflow.com/q/48483348/1113207
+
+    return await asyncio.gather(*[get_response(i) for i in range(20)])
+
+   
+res = asyncio.run(main())
+print(res)
