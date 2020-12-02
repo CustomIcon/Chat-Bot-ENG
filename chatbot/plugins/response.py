@@ -19,5 +19,5 @@ async def main():
     return await asyncio.gather(*[get_response(i) for i in range(20)])
 
    
-res = await main()
+res = asyncio.get_event_loop().run_until_complete(main())
 print(res)
