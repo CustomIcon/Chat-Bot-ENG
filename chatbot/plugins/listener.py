@@ -21,10 +21,12 @@ async def chat_bot(client, message):
 
 
 async def check_message(client, message):
-    if message.chat.type == 'private' and message.text == '/'
+    if message.chat.type == 'private' && message.text == '/'
         return False
-    else:
+    elif message.chat.type == 'private'
         return True
+    else:
+        return False
     Bot = await client.get_me()
     if message.text.lower() == f"@{Bot.username}":
         return True
