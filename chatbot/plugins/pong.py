@@ -8,7 +8,7 @@ from ..chatbot import chatbot
 
 @chatbot.on_message(Filters.private & Filters.command("ping"))
 
-async def get_response(query):
+async def start(query):
     async with aiohttp.ClientSession() as ses:
         async with ses.post(
             f'https://blooming-brook-96225.herokuapp.com/?query=hi'
