@@ -1,13 +1,4 @@
 import aiohttp
-from pyrogram import filters as  Filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
-from ..config import Config
-from ..chatbot import chatbot
-
-
-@chatbot.on_message(Filters.private & Filters.command("ping"))
-
 async def ping(query):
     async with aiohttp.ClientSession() as ses:
         async with ses.post(
