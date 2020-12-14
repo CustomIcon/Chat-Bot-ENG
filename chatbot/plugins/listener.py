@@ -22,9 +22,11 @@ async def chat_bot(client, message):
 
 
 async def check_message(client, message):
-    if message.text and len(message.text) > 1:
-                if len(message.text.split(None, 1)[0]) > 1 and any(message.text.split(None, 1)[0].startswith('/')):
-                   return false
+    if message.text.startswith == '/':
+        return False
+    return False
+    elif message.chat.type == 'private':
+        return True
     Bot = await client.get_me()
     if message.text.lower() == f"@{Bot.username}":
         return True
