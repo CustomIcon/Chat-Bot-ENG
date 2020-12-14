@@ -2,7 +2,7 @@ from pyrogram import filters as  Filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from ..config import Config
-from ..chatbot import ScreenShotBot
+from ..chatbot import chatbot
 
 
 @chatbot.on_message(Filters.private & Filters.command("start"))
