@@ -7,7 +7,7 @@ from chatbot.plugins.response import get_response
 @chatbot.on_message(
     ~filters.me &
     ~filters.edited &
-     ~filters.command &
+    ~filters.command &
     (filters.group | filters.private)
     ,
     group=1)
