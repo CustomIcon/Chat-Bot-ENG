@@ -14,10 +14,10 @@ async def start(c, m):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Creat', url='https://github.com/odysseusmax/animated-lamp')
+                    InlineKeyboardButton('Creator', url='t.me/lolboyisback')
                 ],
                 [
-                    InlineKeyboardButton('My Father', url='https://t.me/odysseusmax')
+                    InlineKeyboardButton('Maintainer', url='https://t.me/jayantkageri')
                 ]
             ]
         )
