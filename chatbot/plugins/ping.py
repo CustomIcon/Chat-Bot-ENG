@@ -13,7 +13,7 @@ async def chat_bot(client, message):
         if await check_message(client, message):
             query = message.text
             await client.send_chat_action(chat_id, action='typing')
-            rep = await get_response(query)
+            rep = await ping(query)
             await message.reply_text(rep)
 
 
