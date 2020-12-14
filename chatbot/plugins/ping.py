@@ -6,11 +6,6 @@ from chatbot.plugins.pong import ping
 from ..config import Config
 from ..chatbot import chatbot
 
-
-@chatbot.on_message(Filters.private & Filters.command("start"))
-async def start(c, m):
-
-
 @chatbot.on_message(Filters.private & Filters.command("start"))
 async def chat_bot(client, message):
     if message.text:
