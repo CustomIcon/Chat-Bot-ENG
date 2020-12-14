@@ -1,6 +1,13 @@
 import asyncio
-from pyrogram import filters
-from chatbot import chatbot
+from pyrogram import filters as  Filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+from ..config import Config
+from ..chatbot import chatbot
+
+
+@chatbot.on_message(Filters.private & Filters.command("start"))
+async def start(c, m):
 from chatbot.plugins.pong import ping
 
 
