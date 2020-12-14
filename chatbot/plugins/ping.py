@@ -1,29 +1,16 @@
-import asyncio
+import time
+from pyrogram import Client
 from pyrogram import filters as  Filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from chatbot.plugins.pong import ping
 
 from ..config import Config
 from ..chatbot import chatbot
 
-@chatbot.on_message(Filters.private & Filters.command("start"))
-async def chat_bot(client, message):
-    if message.text:
-        chat_id = message.chat.id
-        if await check_message(client, message):
-            query = message.text
-            await client.send_chat_action(chat_id, action='typing')
-            rep = await ping(query)
-            await message.reply_text(rep)
 
-
-async def check_message(client, message):
-    if message.chat.type == 'private':
-        return True
-    Bot = await client.get_me()
-    if message.text.lower() == f"@{Bot.username}":
-        return True
-    elif message.reply_to_message:
-        return message.reply_to_message.from_user.id == Bot.id
-    else:
-        return False
+@chatbot.on_message(Filters.command("ping"))
+async def ping(_, message):
+    start_t = time.time()
+    rm = await message.reply_text("...")
+    end_t = time.time()
+    time_taken_s = (end_t - start_t) * 1000
+    await rm.edit(f"Pong!\n{time_taken_s:.3f} ms")
