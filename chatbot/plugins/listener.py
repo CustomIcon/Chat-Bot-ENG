@@ -23,6 +23,8 @@ async def chat_bot(client, message):
 async def check_message(client, message):
     if message.chat.type == 'private':
         return True
+    elif message.text == '/'
+            return False
     Bot = await client.get_me()
     if message.text.lower() == f"@{Bot.username}":
         return True
