@@ -21,9 +21,9 @@ async def chat_bot(client, message):
 
 
 async def check_message(client, message):
-    if message.chat.type == 'private' && message.text == '/'
+    if message.chat.type == 'private' && message.text == '/':
         return False
-    elif message.chat.type == 'private'
+    elif message.chat.type == 'private':
         return True
     else:
         return False
